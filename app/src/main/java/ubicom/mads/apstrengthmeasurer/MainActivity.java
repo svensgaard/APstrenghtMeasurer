@@ -56,17 +56,17 @@ public class MainActivity extends AppCompatActivity {
         scanResults = new ArrayList<>();
         wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         wifiLock = wifiManager.createWifiLock(WifiManager.WIFI_MODE_SCAN_ONLY, MainActivity.class.getName());
-        final CountDownTimerTest timer = new CountDownTimerTest(20000, 5000);
+        final CountDownTimerTest timer = new CountDownTimerTest(20000, 1000);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         final TextView statusTextView = (TextView) findViewById(R.id.statusTextView);
         final EditText roomEditText = (EditText) findViewById(R.id.roomNumberTextField);
-        //statusCheck();
+
         statusTextView.setText("Doing nothing");
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timer.start();
-                statusTextView.setText("Scanner...");
+                statusTextView.setText("Scanning...");
                 room = roomEditText.getText().toString();
             }
         });
@@ -81,10 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void saveToCSV() {
-
     }
 
     @Override
@@ -132,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onFinish() {
             running = false;
-
-            //unregisterReceiver(wifiScanBroadcastReceiver);
 
             wifiLock.release();
 
