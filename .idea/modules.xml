@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/APStrengthMeasurer.iml" filepath="$PROJECT_DIR$/APStrengthMeasurer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/APstrenghtMeasurer.iml" filepath="$PROJECT_DIR$/APstrenghtMeasurer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
